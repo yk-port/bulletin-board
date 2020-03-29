@@ -12,6 +12,7 @@ table.table.table-hover.boards__table
       th 作成日時
       th 更新日時
       th
+      th
   tbody
     - @boards.each do |board|
       tr
@@ -21,3 +22,4 @@ table.table.table-hover.boards__table
         td= board.created_at.to_s(:datatime_jp)
         td= board.updated_at.to_s(:datatime_jp)
         td= link_to '詳細', board, class: 'btn btn-outline-dark'
+        td= link_to '削除', board, class: 'btn btn-outline-dark', method: :delete
