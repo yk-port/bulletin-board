@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap', '~> 4.0.0'
 gem 'kaminari'
+gem 'rails-i18n'
 gem 'slim-rails'
 gem 'html2slim'
 
