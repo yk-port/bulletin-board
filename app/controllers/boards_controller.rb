@@ -2,7 +2,7 @@ class BoardsController < ApplicationController
   before_action :set_target_board, only: %i[edit update show destory]
 
   def index
-    @boards = Board.all
+    @boards = Board.page(params[:page])
   end
 
   def new
