@@ -1,0 +1,11 @@
+.d-flex.align-items-center.mt-4.mb-4
+  .ml-auto.boards__linkBox
+    a.btn.btn-outline-dark[href="/boards"] 一覧
+    a.btn.btn-outline-dark[href="/boards"] 編集
+
+.card
+  .card-header
+    h4= @board.title
+  .card-body
+    p.card-text= simple_format(@board.body)
+    p.text-right.font-weight-bold.mr-10= @board.name
