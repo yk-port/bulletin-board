@@ -12,15 +12,10 @@ table.table.table-hover.boards__table
       th 作成日時
       th 更新日時
   tbody
-    tr
-      th 1
-      td 雑談掲示板
-      td Taro
-      td 2018年4月1日
-      td 2018年4月15日
-    tr
-      th 2
-      td 雑談掲示板2
-      td Ken
-      td 2018年4月1日
-      td 2018年4月15日
+    - @boards.each do |board|
+      tr
+        th= board.id
+        th= board.title
+        th= board.name
+        th= board.created_at
+        th= board.updated_at
