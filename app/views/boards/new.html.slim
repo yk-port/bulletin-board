@@ -2,14 +2,18 @@
   h1 掲示板作成
   .ml-auto.boards__linkBox
     a.btn.btn-outline-dark[href="/boards"] 掲示板一覧
-form
+
+= form_for @board do |f|
   .form-group
-    label[for="name"] 名前
-    input#name.form-control
+    = f.label :name
+      | 名前
+    = f.text_field :name, class: 'form-control'
   .form-group
-    label[for="title"] タイトル
-    input#title.form-control
+    = f.label :title
+      | タイトル
+    = f.text_field :title, class: 'form-control'
   .form-group
-    label[for="body"] 本文
-    textarea#body.form-control[rows="10"]
-  button.btn.btn-primary[type="submit"] 保存
+    = f.label :body
+      | 本文
+    = f.text_area :body, class: 'form-control', rows: 10
+  = f.submit '保存', class: 'btn btn-primary'
