@@ -17,5 +17,5 @@ table.table.table-hover.boards__table
         th= board.id
         th= board.title
         th= board.name
-        th= board.created_at
-        th= board.updated_at
+        th= board.created_at.to_s(:datatime_jp)
+        th= board.updated_at.to_s(:datatime_jp)
