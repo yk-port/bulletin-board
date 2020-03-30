@@ -5,22 +5,20 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
     span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
-      = header_link_item('Home', root_path)
-      = header_link_item('Boards', boards_path)
+      li.nav-item
+        = header_link_item('ホーム', root_path)
+      li.nav-item
+        = header_link_item('掲示板一覧', boards_path)
       li.nav-item.dropdown
         a#navbarDropdown.nav-link.dropdown-toggle[href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"]
-          |  Dropdown 
+          |  ユーザー 
         .dropdown-menu[aria-labelledby="navbarDropdown"]
-          a.dropdown-item[href="#"]
-            | Action
-          a.dropdown-item[href="#"]
-            | Another action
-          .dropdown-divider
-          a.dropdown-item[href="#"]
-            | Something else here
-      li.nav-item
-        a.nav-link.disabled[href="#"]
-          | Disabled
+          - if @current_user
+            = link_to 'マイページ', mypage_path, class: 'dropdown-item'
+            = link_to 'ログアウト', logout_path, method: :delete, class: 'dropdown-item'
+          - else
+            = link_to '登録', new_user_path, class: 'dropdown-item'
+            = link_to 'ログイン', root_path, class: 'dropdown-item'
     form.form-inline.my-2.my-lg-0
       input.form-control.mr-sm-2[type="search" placeholder="Search" aria-label="Search"]
       button.btn.btn-outline-success.my-2.my-sm-0[type="submit"]
